@@ -21,10 +21,10 @@ class Calculate_Regression_Analysis:
         ndvi_stack = self.load_rasters(ndvi_files)
         lst_stack = self.load_rasters(lst_files)
         
-        # Regresyon analizi
+        # Regressiya analizi
         regression_map = self.perform_regression_analysis(ndvi_stack, lst_stack)
         
-        # Regresyon neticeleri
+        # Regressiya neticeleri
         self.save_regression_result(regression_map, ndvi_files[0], regression_output_path)
         
     def load_raster_files_from_folder(self, folder_path):
