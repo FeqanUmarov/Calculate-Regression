@@ -46,7 +46,7 @@ class Calculate_NDVI_L5:
             thermal_band = thermal_src.read(1).astype(float)
             profile = thermal_src.profile  # Orijinal fayilin profilini yazir
         
-        # Radyan hesaplama
+        # Radyan hesaplamanmasi
         radiance = radiance_mult * thermal_band + radiance_add
         lst = k2 / np.log((k1 / radiance) + 1) - 273.15  # derece selsiye cevirmek
         lst[np.isinf(lst)] = np.nan  # Sonsuz deyerleri nan etmek
